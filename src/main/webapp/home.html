@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="glocalMeApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="webjars/bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/glocalme.css">
+    <!-- <link rel="stylesheet" href="webjars/bootstrap-material-design/0.2.1/css/material.css"> -->
+    <title>One-Wifi</title>
+</head>
+
+<body ng-controller="MainCtrl">
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#b-menu-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">GLocalMe</a>
+    </div>
+    <div class="collapse navbar-collapse" id="b-menu-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+			<a href="#/home"><span class="glyphicon glyphicon-home"></span>  Home</a>
+		</li>	  
+        <li>
+			<a href="#/login"><span class="glyphicon glyphicon-user"></span>  Login</a>
+		</li>			
+        <li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown"><span>Shop</span><b class="caret"></b></a>	
+			<ul class="dropdown-menu">
+				<li><a href="#">Rates</a></li>
+				<li><a href="#">Package</a></li>
+			</ul>
+		</li>
+        <li>
+			<a href="#">Top up</a>
+		</li>
+        <li>
+			<a href="#/coverage">Coverage</a>
+		</li>
+        <li>
+			<a href="#/partner/retailerbuy">Buy</a>
+		</li>			
+        <li>
+			<a href="#">Downloads</a>
+		</li>		
+        <li>
+			<a href="#">Support</a>
+		</li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><span>Partner</span><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+			<li><a href="#">Maintain Retailer</a></li>          
+            <li><a href="#/partner/deviceupload">Add Devices</a></li>
+            <li><a href="#">Update Rates</a></li>
+            <li><a href="#">Deactivate Users</a></li>   
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><span>FAQ</span><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">What is GlocalMe</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><span>Language</span><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href ng-click="changeLanguage('en')">English</a></li>
+            <li><a href ng-click="changeLanguage('ch')">Chinese</a></li>			
+          </ul>
+        </li>	        
+      </ul>
+    </div> <!-- /.nav-collapse -->
+  </div> <!-- /.container -->
+</div> <!-- /.navbar -->
+
+<div class="layout row row-offcanvas row-offcanvas-right">
+ 	<!-- column 3 (sidebar) -->
+  	<div class="col-sm-2 sidebar-offcanvas" id="sidebar">
+		<div class="panel panel-default">
+			<div class="panel-heading">My Account</div>
+			<div class="list-group" role="navigation">
+			  <a href="#" class="list-group-item"><span class="glyphicon glyphicon-camera pull-left icon1"></span>Account Summary</a>
+			  <a href="#" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>Traffic History</a>
+			  <a href="#/topuphistory" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>Top-up History</a>
+			  <a href="#/personal" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>Personal Information</a>
+			  <a href="#" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>Change Password</a>
+			  <a href="#" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>Activate Device</a>	  
+			  <a href="#" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>Order List</a>	  	  
+			</div>
+		</div>
+	</div><!-- /column 3 (sidebar) -->
+	<div class="col-xs-12 col-sm-10">
+	    <div class="row">
+	    	<div ng-view></div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+  <div class="container">
+    <p class="credit">Term of Use . Privacy Policy  Copyright 2011-2015 GlocalMe.com, All Rights Reserved.</p>
+  </div>
+</div>
+
+<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="webjars/angularjs/1.3.8/angular.min.js"></script>
+<script type="text/javascript" src="webjars/angularjs/1.3.8/angular-route.min.js"></script>
+<script type="text/javascript" src="webjars/angularjs/1.3.8/angular-resource.min.js"></script>
+<script type="text/javascript" src="webjars/angular-ui-bootstrap/0.13.3/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="webjars/angular-ui-bootstrap/0.13.3/ui-bootstrap.js"></script>
+<script type="text/javascript" src="webjars/bootstrap-material-design/0.2.1/js/material.js"></script> 
+<script type="text/javascript" src="webjars/angular-translate/2.7.2/angular-translate.js"></script>
+<script type="text/javascript" src="resources/js/app.js"></script>
+<script type="text/javascript" src="resources/js/controllers/partner.js"></script>
+<script type="text/javascript" src="resources/js/controllers/retailer.js"></script>
+
+
+<script>
+	$(function () {
+		$(".list-group a").click(function () {
+			var $lists = $('.list-group a')
+			$lists.filter(".active").removeClass("active");
+			$(this).toggleClass("active");
+		});
+	
+	});
+</script>
+</body>
+</html>

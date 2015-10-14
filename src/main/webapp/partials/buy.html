@@ -1,0 +1,129 @@
+<form class="form-horizontal">
+	<h4>Buy Device</h4>
+	<br/>
+	<div class="form-group">
+			<label for="inputEmail" class="control-label col-xs-4 inputsm">Identity Type</label>
+			<div class="col-xs-6">
+				<label class="btn btn-default">
+					<input name="cssPre input-sm" id="css2" type="radio" value="NRIC" data-ng-model="retailer.idtype"> NRIC
+				</label>&nbsp;&nbsp;&nbsp;
+				<label class="btn btn-default">
+					<input name="cssPre input-sm" id="css3" type="radio" checked="checked" value="Passport" data-ng-model="retailer.idtype"> Passport
+				</label>&nbsp;&nbsp;&nbsp;
+				<label class="btn btn-default">
+					<input name="cssPre input-sm" id="css3" type="radio" checked="checked" value="Others" data-ng-model="retailer.idtype"> Others
+				</label>				
+			</div>
+			<!--
+			<div class="col-xs-2">
+				<button type="submit" class="btn btn-primary btn-sm">Scan {{retailer.idtype}}</button>
+			</div>				
+			-->
+	</div>
+	
+	<div class="form-group">
+		<div class="row">
+			<label for="fileInput" class="control-label col-xs-4 inputsm">Upload Image</label>
+			<div class="col-xs-6">
+				<input class="input-file" id="fileInput" type="file">  
+			</div>
+			<div class="col-xs-2">			
+				<button type="button" class="btn btn-primary btn-sm" ng-click="doScan();">Scan {{retailer.idtype}}</button>
+			</div>
+		</div>
+	</div>	
+
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">{{retailer.idtype}} No</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" ng-model="retailer.id" placeholder="ID Card / Passport Number">
+		</div>
+	</div>	
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Email</label>
+		<div class="col-xs-8">
+			<input type="password" class="form-control input-sm" id="inputPassword" placeholder="Email">
+		</div>
+	</div>		
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">IMEI No</label>
+		<div class="col-xs-8">
+			<input type="password" class="form-control input-sm" id="inputPassword" placeholder="IMEI No">
+		</div>
+	</div>	
+	<!--
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4">Employment / Work Permit / Student Pass / Spl Pass No</label>
+		<div class="col-xs-8">
+			<input type="password" class="form-control" id="inputPassword" placeholder="ID Card / Passport Number">
+		</div>
+	</div>	
+	-->
+	<div class="form-group">
+			<label for="inputEmail" class="control-label col-xs-4 inputsm">Full Name as in {{retailer.idtype}}</label>
+			<div class="col-xs-8">
+				<input type="email" class="form-control input-sm" id="inputEmail" placeholder="First Name" ng-model="retailer.fullname">
+			</div>
+	</div>	
+
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Address Line 1</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Address Line 1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Address Line 2</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Address Line 2">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Address Line 3</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Address Line 3">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Contact No</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Mobile">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">City</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="City">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Province/State</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Province/State">
+		</div>
+	</div>			
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Country</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Country">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Zip Code</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Zip Code">
+		</div>
+	</div>				
+	<div class="form-group">
+		<div class="col-xs-offset-6 col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="personalInfoSubmit();">Submit</button>
+		</div>
+		<div class="col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="print();">Print</button>
+		</div>			
+		<div class="col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm">Cancel</button>
+		</div>				
+	</div>
+</form>
