@@ -1,4 +1,4 @@
-package com.mycompany.myproject.config;
+package com.glocalme.spring;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

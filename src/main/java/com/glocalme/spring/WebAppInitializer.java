@@ -1,4 +1,4 @@
-package com.mycompany.myproject.config;
+package com.glocalme.spring;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;

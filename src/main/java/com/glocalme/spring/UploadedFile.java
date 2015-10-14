@@ -1,4 +1,4 @@
-package com.mycompany.myproject.config;
+package com.glocalme.spring;
 
 public class UploadedFile {
 	 
