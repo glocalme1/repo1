@@ -46,6 +46,7 @@ public class RetailerController {
     	try {
     		jasperReport = printService.compileReport( reportFileName , jasperFileName );
     		byte[] bytes = JasperRunManager.runReportToPdf(jasperReport , new HashMap<String,String>());
+    		/*
         	servletResponse.reset();
             servletResponse.resetBuffer();
             servletResponse.setContentType("application/pdf");
@@ -53,7 +54,15 @@ public class RetailerController {
             ServletOutputStream ouputStream = servletResponse.getOutputStream();
             ouputStream.write(bytes, 0, bytes.length);
             ouputStream.flush();
-            ouputStream.close();    		
+            ouputStream.close();
+            */
+    		
+    		servletResponse.setContentType("application/pdf");
+    		servletResponse.setContentLength(bytes.length);
+  
+    		servletResponse.getOutputStream().write(bytes, 0, bytes.length);
+    		servletResponse.getOutputStream().flush();
+    		servletResponse.getOutputStream().close();            
 			
 		} catch (Exception e) {
 			e.printStackTrace();

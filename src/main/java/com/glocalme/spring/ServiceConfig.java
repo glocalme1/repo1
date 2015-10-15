@@ -4,7 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan({"com.glocalme.service","com.mycompany.myproject.service"})
+@ComponentScan("com.glocalme.service")
 public class ServiceConfig {
    
      

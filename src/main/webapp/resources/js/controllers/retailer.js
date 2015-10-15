@@ -33,6 +33,7 @@ sampleApp.controller('RetailerCtrl', function ($scope, $http, $location, $timeou
 		};
 		var res = $http.post('/GlocalMe/retailer/print', dataObj);
 		res.success(function(data, status, headers, config) {
+			console.log(data);
  			var blob = new Blob([data], {type: "application/pdf"});
             var isIE = (navigator.userAgent.indexOf("MSIE") != -1);
             var isIE11 = !!navigator.userAgent.match(/Trident.*rv[ :]*11\./)
@@ -56,7 +57,6 @@ sampleApp.controller('RetailerCtrl', function ($scope, $http, $location, $timeou
 		});
 		res.error(function(data, status, headers, config) {
 			console.log("OOPS!!");
-			//alert( "failure message: " + JSON.stringify({data: data}));
 		});		
 	}
 	
